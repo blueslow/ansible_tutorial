@@ -28,10 +28,13 @@ nano ansible.cfg
   
   
 Runing a few ad-hoc commnads to see if it's working  
+
     ansible all  -m ping # A ping pong test  
     ansible all --list-host # lists the hosts in the inventory file  
     ansible all -m gather_facts # reports facts about the hosts in the invetory file  
     ansible all -m gather_facts --limit nimbus102.sehlstedt.se # same as above but only for nimbus102  
   
+to be contineued ...  
+
 
 
