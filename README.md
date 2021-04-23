@@ -1,2 +1,3 @@
 # ansible_tutorial
-Tutorial for ansible
+
+Tutorial for ansible, following Jay LaCroix
