@@ -22,12 +22,12 @@ Created inventory of hosts
 Created ansible.cfg:  
 nano ansible.cfg   
 <code>
-[defaults]  
-inventory = inventory  
-private_key_file = ~/.ssh/id_ansible  
+[defaults]<br />
+inventory = inventory<br />
+private_key_file = ~/.ssh/id_ansible<br />
 </code>
-<br>
-<br>
+<br />
+<br />
 Runing a few ad-hoc commnads to see if it's working  
 <code>
 ansible all  -m ping<br> 
