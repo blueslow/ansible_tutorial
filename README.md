@@ -18,4 +18,18 @@ Create repository, e.g either on github or own git server.
 Install public password åprotected key in git repository server.
 SSH clone repository. Change to git project  
 
+Created inventory of hosts  
+Created ansible.cfg:  
+nano ansible.cfg   
+[deafults]  
+inventory = inventory  
+private_key_file = ~/.ssh/id_ansible  
+
+Runing a few ad-hoc commnads to see if its  working  
+<code>
+ansible all  -m ping <br /> 
+ansible all --list-host <br />
+ansible all -m gather_facts <br /<
+ansible all -m gather_facts --limit nimbus102.sehlstedt.se<br />
+>/code>
 
