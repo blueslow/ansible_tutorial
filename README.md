@@ -22,9 +22,9 @@ Created inventory of hosts
 Created ansible.cfg:  
 nano ansible.cfg   
 <code>
-[defaults]<br>
-inventory = inventory<br>
-private_key_file = ~/.ssh/id_ansible<br>
+[defaults]  
+inventory = inventory  
+private_key_file = ~/.ssh/id_ansible  
 </code>
 <br>
 <br>
