@@ -22,16 +22,16 @@ Created inventory of hosts
 Created ansible.cfg:  
 nano ansible.cfg   
 
-[defaults]  
-inventory = inventory  
-private_key_file = ~/.ssh/id_ansible  
+    [defaults]  
+    inventory = inventory  
+    private_key_file = ~/.ssh/id_ansible  
   
   
 Runing a few ad-hoc commnads to see if it's working  
-ansible all  -m ping # A ping pong test  
-ansible all --list-host # lists the hosts in the inventory file  
-ansible all -m gather_facts # reports facts about the hosts in the invetory file  
-ansible all -m gather_facts --limit nimbus102.sehlstedt.se # same as above but only for nimbus102  
+    ansible all  -m ping # A ping pong test  
+    ansible all --list-host # lists the hosts in the inventory file  
+    ansible all -m gather_facts # reports facts about the hosts in the invetory file  
+    ansible all -m gather_facts --limit nimbus102.sehlstedt.se # same as above but only for nimbus102  
   
 
 
