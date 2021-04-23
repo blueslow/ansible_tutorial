@@ -11,6 +11,10 @@ Install git on ansible server.
 config git, e.g.
 git config --global user.name "full name"
 git config --global user.email  full@name.se
+Linux:
+git config --global core.autocrlf input
+Windows 
+git config --global core.autocrlf 
 Create repository, e.g either on github or own git server.
 Install public password åprotected key in git repository server
 Clone repository
