@@ -48,9 +48,8 @@ The --ask-become-pass -> ask for password e.g. sudo
   
     ansible all -m apt -a update_cache=true --become --ask-become-pass # works  
   
-Check /var/log/apt on a apointed server  
+Check /var/log/apt on a apointed server. To install packages:  
   
-Install packages  
     ansible all -m apt -a name=vim-nox --become --ask-become-pass  
     ansible all -m apt -a name=tmux --become --ask-become-pass  
   
@@ -65,7 +64,8 @@ The below will upgrade to new version, if avaiable.
   
     ansible all -m apt -a "upgrade=dist" --become --ask-become-pass  
   
-To be continued.
+To be continued...  
+
 
 
 
