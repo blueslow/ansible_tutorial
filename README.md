@@ -34,7 +34,34 @@ Runing a few ad-hoc commnads to see if it's working
     ansible all -m gather_facts # reports facts about the hosts in the invetory file  
     ansible all -m gather_facts --limit nimbus102.sehlstedt.se # same as above but only for nimbus102  
   
-to be contineued ...  
+Part 5 elevated ad-hoc commands:  
+Note this requiers that the user on the remote server are allowed to use sudo.,e.g. belongs to the sudo group
+Can be achived with following command as root on each server in the inventory list:
+    usermod -aG sudo username  
+  
+  
+Now try following:  
+    ansible all -m apt -a update_cache=true # Failes needs sudo  
+# become - ask to  sombody else, ask-become-pass ask for password for e.g., sudo      
+    ansible all -m apt -a update_cache=true --become --ask-become-pass # works
+Check /var/log/apt on a apointed server
+Install packages
+    ansible all -m apt -a name=vim-nox --become --ask-become-pass    
+    ansible all -m apt -a name=tmux --become --ask-become-pass  
+The above will install the packages if not already installed.
+    ansible all -m apt -a name=tmux --become --ask-become-pass  
+The above will fail because tmux is already installed
+
+    ansible all -m apt -a "name=tmux state=latest" --become --ask-become-pass  
+Will install lastest version if available and belongs to a "higher version"  
+  
+The below will upgrade to new version.  
+   ansible all -m apt -a "upgrade=dist" --become --ask-become-pass  
+  
+To be continued.
+
+
+
 
 
 
