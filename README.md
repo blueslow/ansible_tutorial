@@ -42,7 +42,8 @@ Can be achived with following command as root on each server in the inventory li
   
 Now try following:  
     ansible all -m apt -a update_cache=true # Failes needs sudo  
-# become - ask to  sombody else, ask-become-pass ask for password for e.g., sudo      
+The --become -> ask to sombody else.  
+The --ask-become-pass -> ask for password e.g. sudo   
     ansible all -m apt -a update_cache=true --become --ask-become-pass # works
 Check /var/log/apt on a apointed server
 Install packages
