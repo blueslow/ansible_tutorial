@@ -1,8 +1,8 @@
-# ansible_tutorial
+# Ansible tutorial
 
 Tutorial for ansible, following Jay LaCroix  
 
-Introduction  
+# Introduction  
 Install openssh-server on servers.  
 Install openssh-client on ansible server.  
 Generate personal key, password protected and ansible key with out password.  
@@ -68,9 +68,10 @@ The below will upgrade to new version, if avaiable.
 Added support for install and remove apache. It also add php support for apache management.  
 See files install_apache.yml and  remove_apache.yml   
 # Part 07  
-To be continued...  
+Added Centos server and install of apache and php support for CentOS.  
 
 # Part 08  
+To be continued...  
 
 # Part 09  
 
