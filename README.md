@@ -97,12 +97,17 @@ Note:CentOS do not start the httpd servcie automatically or fix the firewall. I 
 
 
 # Part 08  
-Reorganisation of playbook. The two playbooks, install_apache.yml and remove_apache are refactored. To get that to work the the inventory file is changed as well to contain variable assignments per host that is used in the playbooks.   
+Reorganisation of playbook. The two playbooks, install_apache.yml and remove_apache.yml are refactored. To get that to work the the inventory file is changed as well to contain variable assignments per host that is used in the playbooks.   
 
 # Part 09  
-To be continued...  
+Targeting specific nodes(hosts). Groupes of host is introduced in the inventory file.
+A site.yml file was created that have tasks to be executed by all hostsand groups of task to excecuted of only by the hosts that belonged to the specific group. The groups introduced was web_servers, file_servers and db_servers.
+
+Note the tasks in the hosts all section was changed to pre_task to ensure that this task is executed before the all other host section's tasks in the file.
+
 
 # Part 10  
+To be continued...  
 
 # Part 11  
 
