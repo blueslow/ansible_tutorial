@@ -70,6 +70,32 @@ See files install_apache.yml and  remove_apache.yml
 # Part 07  
 Added Centos server and install of apache and php support for CentOS.  
 
+The ansible when: statment can be rewritten as:  
+
+    when: ansible_distribution in ["Debian", "Ubuntu"]  
+
+to work for both distributions. Other variants are possible, e.g.
+  
+    when: ansible_distribution == "CentOS" and ansible_distribution_versions == "8.3"  
+  
+to pin point a specifict distribution and its version. In fact any variable from gather facts command,  
+  
+    ansible all -m gather_facts  
+  
+ can be used in logical expression as a when selector. Another example:  
+  
+    ansible all -m gather_facts --limit  nimbus105.sehlstedt.se | grep ansible_distribution  
+        "ansible_distribution": "CentOS",  
+        "ansible_distribution_file_parsed": true,  
+        "ansible_distribution_file_path": "/etc/redhat-release",  
+        "ansible_distribution_file_variety": "RedHat",  
+        "ansible_distribution_major_version": "8",  
+        "ansible_distribution_release": "NA",  
+        "ansible_distribution_version": "8.3",  
+  
+Note:CentOS do not start the httpd servcie automatically or fix the firewall. I set up the CentOS as a container in proxmox, ANd had to separately add user and sudo, sudoers and openssh client and server and ssh keys. THe container used didn't have firewall so that was skipped. These things could of courser be automated as well.
+
+
 # Part 08  
 To be continued...  
 
@@ -88,10 +114,4 @@ To be continued...
 # Part 15  
 
 # Part 16  
-
-
-
-
-
-
 
