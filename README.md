@@ -105,11 +105,12 @@ A site.yml file was created that have tasks to be executed by all hostsand group
 
 Note the tasks in the hosts all section was changed to pre_task to ensure that this task is executed before the all other host section's tasks in the file.
 
-
+Taks changethe inventory to contain the grouups definition and the host variables. To get the remove_apache work again. Also chnaged the site.yml to enable an start the httpd service on CentOS machines.
+ 
 # Part 10  
-To be continued...  
 
 # Part 11  
+To be continued...  
 
 # Part 12  
 

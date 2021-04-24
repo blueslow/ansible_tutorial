@@ -38,6 +38,16 @@
       state: latest
     when: ansible_distribution == "CentOS"
 
+  - name: enable and start apache on CentOS servers
+    systemd:
+      state: restarted
+      masked: no
+      enabled: yes
+      daemon_reload: yes
+      name: httpd
+    when: ansible_distribution == "CentOS"
+
+
 
 - hosts: db_servers
   become: true
