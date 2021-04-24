@@ -34,7 +34,7 @@ Runing a few ad-hoc commnads to see if it's working
     ansible all -m gather_facts # reports facts about the hosts in the invetory file  
     ansible all -m gather_facts --limit nimbus102.sehlstedt.se # same as above but only for nimbus102  
   
-#Part 5 elevated ad-hoc commands  
+# Part 5 elevated ad-hoc commands  
 Note this requiers that the user on the remote server are allowed to use sudo.,e.g. belongs to the sudo group
 Can be achived with following command as root on each server in the inventory list:  
     usermod -aG sudo username    
@@ -64,28 +64,29 @@ The below will upgrade to new version, if avaiable.
   
     ansible all -m apt -a "upgrade=dist" --become --ask-become-pass  
   
-#Part 06  
-
-#Part 07  
+# Part 06  
+Added support for install and remove apache. It also add php support for apache management.  
+See files install_apache.yml and  remove_apache.yml   
+# Part 07  
 To be continued...  
 
-#Part 08  
+# Part 08  
 
-#Part 09  
+# Part 09  
 
-#Part 10  
+# Part 10  
 
-#Part 11  
+# Part 11  
 
-#Part 12  
+# Part 12  
 
-#Part 13  
+# Part 13  
 
-#Part 14  
+# Part 14  
 
-#Part 15  
+# Part 15  
 
-#Part 16  
+# Part 16  
 
 
 
