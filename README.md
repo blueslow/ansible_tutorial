@@ -5,8 +5,7 @@ Tutorial for ansible, following Jay LaCroix
 # Introduction  
 Install openssh-server on servers.  
 Install openssh-client on ansible server.  
-Generate personal key, password protected and ansible key with out password.  
-Install public keys on servres.  
+Generate personal key, password protected and ansible key with out password on the ansible servers. Install public keys on the servres.  
 Install git on ansible server.  
 config git, e.g.  
 git config --global user.name "full name"  
@@ -34,7 +33,7 @@ Runing a few ad-hoc commnads to see if it's working
     ansible all -m gather_facts # reports facts about the hosts in the invetory file  
     ansible all -m gather_facts --limit nimbus102.sehlstedt.se # same as above but only for nimbus102  
 
-# Part 5 elevated ad-hoc commands  
+# Part 5 - Runnuing elevated ad-hoc commands  
 Note this requiers that the user on the remote server are allowed to use sudo.,e.g. belongs to the sudo group
 Can be achived with following command as root on each server in the inventory list:  
     usermod -aG sudo username    
@@ -64,10 +63,10 @@ The below will upgrade to new version, if avaiable.
 
     ansible all -m apt -a "upgrade=dist" --become --ask-become-pass  
 
-# Part 06  
+# Part 06 - Writing your first playbook
 Added support for install and remove apache. It also add php support for apache management.  
 See files install_apache.yml and  remove_apache.yml   
-# Part 07  
+# Part 07 - The 'when' conditional
 Added Centos server and install of apache and php support for CentOS.  
 
 The ansible when: statment can be rewritten as:  
@@ -96,10 +95,10 @@ to pin point a specifict distribution and its version. In fact any variable from
 Note:CentOS do not start the httpd servcie automatically or fix the firewall. I set up the CentOS as a container in proxmox, ANd had to separately add user and sudo, sudoers and openssh client and server and ssh keys. THe container used didn't have firewall so that was skipped. These things could of courser be automated as well.
 
 
-# Part 08  
+# Part 08 - Improving your playbook
 Reorganisation of playbook. The two playbooks, install_apache.yml and remove_apache.yml are refactored. To get that to work the the inventory file is changed as well to contain variable assignments per host that is used in the playbooks.   
 
-# Part 09  
+# Part 09 - Targeting specific nodes (hosts)
 Targeting specific nodes(hosts). Groupes of host is introduced in the inventory file.
 A site.yml file was created that have tasks to be executed by all hostsand groups of task to excecuted of only by the hosts that belonged to the specific group. The groups introduced was web_servers, file_servers and db_servers.
 
@@ -107,7 +106,7 @@ Note the tasks in the hosts all section was changed to pre_task to ensure that t
 
 Taks changethe inventory to contain the grouups definition and the host variables. To get the remove_apache work again. Also chnaged the site.yml to enable an start the httpd service on CentOS machines.
 
-# Part 10  
+# Part 10 - Tags
 Added tags to site.yml inorder to not run all task.  
 
    ansible-playbook --list-tags site.yml  
