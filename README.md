@@ -152,7 +152,6 @@ Running bootstrap requiers password, e.g.
     ansible-playbook --ask-become-pass bootstrap.yml  
 
 Then run  
-
     ansible-playbook site.yml  
 
 # Part 14 - Roles
