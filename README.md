@@ -125,7 +125,15 @@ To run task that are marked with  tags use:
 
 Created a default_site.html file in a new subdirectory called files and created a new task under web servers that copied the default_site.html file to /var/www/html/index.html on the webservers and assing owner and grouop to root and change the file mode to 0644.  
 
+The subdirectory files is a default directory for the ansible copy module.
 
+Created a new group called workstations were two task were created. The first task install
+the unzip package which is needed by the ansible unarchive module. The second task use the unarchive module to fetch a zipfile from the internet, e.g. the terraform, see url:
+https://www.terraform.io/downloads.html  
+ for current download links. Then ansible unzip this file to /usr/local/bin and change group and ownership and file mode.  
+
+Finaly the the hosts in the worksations group was added to the inventory file.   
+Note that the ansible public ssh key was added to the workstations before the playbok was used.  
 
 # Part 12  
 

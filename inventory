@@ -7,3 +7,7 @@ nimbus103.sehlstedt.se apache_package=apache2 php_package=libapache2-mod-php
 
 [file_servers]
 nimbus106.sehlstedt.se apache_package=apache2 php_package=libapache2-mod-php
+
+[workstations]
+jawa.sehlstedt.se
+nimbus104.sehlstedt.se
