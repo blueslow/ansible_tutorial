@@ -106,8 +106,21 @@ A site.yml file was created that have tasks to be executed by all hostsand group
 Note the tasks in the hosts all section was changed to pre_task to ensure that this task is executed before the all other host section's tasks in the file.
 
 Taks changethe inventory to contain the grouups definition and the host variables. To get the remove_apache work again. Also chnaged the site.yml to enable an start the httpd service on CentOS machines.
- 
+
 # Part 10  
+Added tags to site.yml inorder to not run all task.  
+
+   ansible-playbook --list-tags site.yml  
+
+Lists available tags in a playbook named site.yml
+
+To run task that are marked with a tag use:  
+   ansible-playbook --tags centos --ask-become-pass site.yml  
+
+To run task that are marked with  tags use:  
+
+ansible-playbook --tags "centos,web_server" --ask-become-pass site.yml  
+
 
 # Part 11  
 To be continued...  
