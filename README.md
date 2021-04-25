@@ -140,8 +140,9 @@ Note that the ansible public ssh key was added to the workstations before the pl
 The ansible module service was introduced  to start a service. There is also an systemd  module. Further more module lineinfile was introduced and the register statement to demonstrate how to  only run when a change was made. Note the variable used in the register statement is a toggle thus using is twice is  a bad idea because that is interpreted as no change.  
 
  Also be observant on the lineinfile statement may result in multiple chnages when the playbook is executed again, thus erronous changes will be performed and conditional task may be executed again.  
-  
-# Part 13  
+
+# Part 13 - Adding users and bootstrapping
+ 
 
 # Part 14  
 
