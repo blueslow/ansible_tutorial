@@ -163,7 +163,13 @@ Note that special care must be taken regarding  the spacin in the main.yml files
 
 Roles that have files that are copied, need to have a files directory at the same level as the task directory. The files directory contains the file(s) to be copied. THus the original src does not have to be changed.
 
-        
+
 # Part 15 - Host variables and handlers
+The host_vars directory was added and it containa a yml file for each host in the inventory . Each yml file contain variables for that host.  
+
+In this case it is mostly variables for the difference between naimn of apache between Ubuntu and CentOS.
+
+A handler directory was added with a main.yml file that gets notofied from a specific changes in the web_servers task. It task is to restart th apache service if the config file is updated. Notify and handlers is a better way than using register statemetn because it avoid the risc  of missing toogle variables.
+
 
 # Part 16 - Series finale - templates

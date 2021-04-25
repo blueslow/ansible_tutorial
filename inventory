@@ -1,12 +1,12 @@
 [web_servers]
-nimbus102.sehlstedt.se apache_package=apache2 php_package=libapache2-mod-php
-nimbus105.sehlstedt.se apache_package=httpd php_package=php
+nimbus102.sehlstedt.se
+nimbus105.sehlstedt.se
 
 [db_servers]
-nimbus103.sehlstedt.se apache_package=apache2 php_package=libapache2-mod-php
+nimbus103.sehlstedt.se
 
 [file_servers]
-nimbus106.sehlstedt.se apache_package=apache2 php_package=libapache2-mod-php
+nimbus106.sehlstedt.se
 
 [workstations]
 jawa.sehlstedt.se
