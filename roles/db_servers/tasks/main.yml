@@ -5,7 +5,7 @@
      state: latest
   when: ansible_distribution == "CentOS"
 
-- name: install mariadb server
+- name: install mariadb server package (Ubuntu)
   tags: db,mariadb,ubuntu
   apt:
     name: mariadb-server
