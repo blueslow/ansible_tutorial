@@ -142,10 +142,22 @@ The ansible module service was introduced  to start a service. There is also an 
  Also be observant on the lineinfile statement may result in multiple chnages when the playbook is executed again, thus erronous changes will be performed and conditional task may be executed again.  
 
 # Part 13 - Adding users and bootstrapping
- 
+Added simone user, bootstrap script, and separated bootstrap task from site.yml into bootstrap.yml.  
+Also added ssh key for user simone to all machines in inventory.
 
-# Part 14  
+ansible.cfg was update as well
 
-# Part 15  
+Running bootstrap requiers password, e.g.  
 
-# Part 16  
+    ansible-playbook --ask-become-pass bootstrap.yml  
+
+Then run  
+
+ansible-playbook site.yml  
+
+
+# Part 14 - Roles
+
+# Part 15 - Host variables and handlers
+
+# Part 16 - Series finale - templates
