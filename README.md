@@ -33,7 +33,7 @@ Runing a few ad-hoc commnads to see if it's working
     ansible all -m gather_facts # reports facts about the hosts in the invetory file  
     ansible all -m gather_facts --limit nimbus102.sehlstedt.se # same as above but only for nimbus102  
 
-# Part 5 - Runnuing elevated ad-hoc commands  
+# Part 5 - Runing elevated ad-hoc commands  
 Note this requiers that the user on the remote server are allowed to use sudo.,e.g. belongs to the sudo group
 Can be achived with following command as root on each server in the inventory list:  
     usermod -aG sudo username    
@@ -109,20 +109,23 @@ Taks changethe inventory to contain the grouups definition and the host variable
 # Part 10 - Tags
 Added tags to site.yml inorder to not run all task.  
 
-   ansible-playbook --list-tags site.yml  
+    ansible-playbook --list-tags site.yml  
 
 Lists available tags in a playbook named site.yml
 
 To run task that are marked with a tag use:  
-   ansible-playbook --tags centos --ask-become-pass site.yml  
+    ansible-playbook --tags centos --ask-become-pass site.yml  
 
 To run task that are marked with  tags use:  
 
-ansible-playbook --tags "centos,web_server" --ask-become-pass site.yml  
+    ansible-playbook --tags "centos,web_server" --ask-become-pass site.yml  
 
 
-# Part 11  
-To be continued...  
+# Part 11 - Managing Files
+
+Created a default_site.html file in a new subdirectory called files and created a new task under web servers that copied the default_site.html file to /var/www/html/index.html on the webservers and assing owner and grouop to root and change the file mode to 0644.  
+
+
 
 # Part 12  
 
