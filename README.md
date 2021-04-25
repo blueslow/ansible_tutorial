@@ -173,3 +173,4 @@ A handler directory was added with a main.yml file that gets notofied from a spe
 
 
 # Part 16 - Series finale - templates
+Added sshd template, sshd handler, and host variables for sshd.  
