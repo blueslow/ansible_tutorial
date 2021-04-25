@@ -114,6 +114,7 @@ Added tags to site.yml inorder to not run all task.
 Lists available tags in a playbook named site.yml
 
 To run task that are marked with a tag use:  
+
     ansible-playbook --tags centos --ask-become-pass site.yml  
 
 To run task that are marked with  tags use:  
@@ -135,8 +136,11 @@ https://www.terraform.io/downloads.html
 Finaly the the hosts in the worksations group was added to the inventory file.   
 Note that the ansible public ssh key was added to the workstations before the playbok was used.  
 
-# Part 12  
+# Part 12 - Managing services
+The ansible module service was introduced  to start a service. There is also an systemd  module. Further more module lineinfile was introduced and the register statement to demonstrate how to  only run when a change was made. Note the variable used in the register statement is a toggle thus using is twice is  a bad idea because that is interpreted as no change.  
 
+ Also be observant on the lineinfile statement may result in multiple chnages when the playbook is executed again, thus erronous changes will be performed and conditional task may be executed again.  
+  
 # Part 13  
 
 # Part 14  

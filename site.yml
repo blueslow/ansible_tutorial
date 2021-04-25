@@ -59,15 +59,42 @@
       state: latest
     when: ansible_distribution == "CentOS"
 
+  # - name: start httpd (CentOS)
+  #   tags: apache,centos,httpd
+  #   service:
+  #     name: httpd
+  #     state: started
+  #     enabled: yes
+  #   when: ansible_distribution == "CentOS"
+
   - name: enable and start apache on CentOS servers
     tags: apache,centos,httpd
     systemd:
-      state: restarted
+      state: started
       masked: no
       enabled: yes
       daemon_reload: yes
       name: httpd
     when: ansible_distribution == "CentOS"
+
+  - name: change e-mail address for admin
+    tags: apache,centos,httpd
+    lineinfile:
+      path: /etc/httpd/conf/httpd.conf
+      regexp: '^ServerAdmin'
+      line: ServerAdmin compad@sehlstedt.se
+    when: ansible_distribution == "CentOS"
+    register: httpd
+
+  - name: restart httpd (CentOS)
+    tags: apache,centos,httpd
+    service:
+      name: httpd
+      state: restarted
+    when: httpd.changed
+
+
+
 
   - name: copy defaul html file for site
     tags: apache, apache2, httpd
