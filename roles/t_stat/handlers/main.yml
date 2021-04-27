@@ -1,0 +1,6 @@
+- name: source_dotfiles
+  become_user: klaseh
+  ansible.builtin.shell:
+    cmd: "bash -c 'source bootstrap.sh'"
+    args:
+      chdir: /home/klaseh/dev/dotfiles

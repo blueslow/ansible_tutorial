@@ -42,3 +42,24 @@
       owner: root
       group: root
       mode: 0440
+
+  - name: create klaseh user
+    tags: always
+    user:
+      name: klaseh
+      groups: klaseh
+
+  - name: add ssh key for klaseh
+    tags: always
+    authorized_key:
+      user: klaseh
+      key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE3ShmhSX1HEdvhqP5khdZRW8vc2yUl655er/RTaiIsp klaseh@nimbus104"
+
+  - name: add sudoers file for klaseh
+    tags: always
+    copy:
+      src: sudoer_klaseh
+      dest: /etc/sudoers.d/klaseh
+      owner: root
+      group: root
+      mode: 0440

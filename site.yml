@@ -42,3 +42,8 @@
   become: true
   roles:
     - file_servers
+
+- hosts: tstat
+  become: true
+  roles:
+    - t_stat

@@ -1,0 +1,30 @@
+- name: install unzip
+  package:
+    name: unzip
+
+- name: install command line apps
+  apt:
+    pkg:
+    - git
+    - ansible
+    - aria2
+    - fdupes
+    - parallel
+    state: latest
+
+- name: install graphic apps
+  apt:
+    pkg:
+    - meld
+    - vlc
+    - klatexformula
+    - regexxer
+    state: latest
+
+- name: Checkout blueslows dotfiles
+  become_user: klaseh
+  ansible.builtin.git:
+    repo: https://github.com/blueslow/dotfiles.git
+    dest: /home/klaseh/dev/dotfiles
+    clone: true
+    notify: source_dotfiles
