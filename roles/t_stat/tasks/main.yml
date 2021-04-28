@@ -1,8 +1,10 @@
 - name: install unzip
+  tags: tstat
   package:
     name: unzip
 
 - name: install command line apps
+  tags: tstat
   apt:
     pkg:
     - git
@@ -10,9 +12,11 @@
     - aria2
     - fdupes
     - parallel
+    - tmux
     state: latest
 
 - name: install graphic apps
+  tags: tstat
   apt:
     pkg:
     - meld
@@ -21,10 +25,11 @@
     - regexxer
     state: latest
 
-- name: Checkout blueslows dotfiles
+- name: Checkout blueslow's dotfiles
+  tags: tstat
   become_user: klaseh
   ansible.builtin.git:
     repo: https://github.com/blueslow/dotfiles.git
     dest: /home/klaseh/dev/dotfiles
     clone: true
-    notify: source_dotfiles
+  notify: source_dotfiles
