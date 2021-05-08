@@ -21,6 +21,7 @@
   pip:
     name:
       - topalias
+      - bpytop
 
 - name: install graphic apps
   tags: tstat
