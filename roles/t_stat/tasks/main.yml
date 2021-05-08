@@ -23,6 +23,7 @@
     - vlc
     - klatexformula
     - regexxer
+    - keepassxc
     state: latest
 
 - name: Checkout blueslow's dotfiles
