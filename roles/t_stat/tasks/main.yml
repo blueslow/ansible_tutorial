@@ -14,6 +14,7 @@
     - parallel
     - tmux
     - python3-pip
+    - curl
     state: latest
 
 - name: install python packages
@@ -22,6 +23,8 @@
     name:
       - topalias
       - bpytop
+      - youtube-dl
+    state: latest
 
 - name: install graphic apps
   tags: tstat
