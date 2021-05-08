@@ -13,7 +13,7 @@
     - fdupes
     - parallel
     - tmux
-    - pyhton3-pip
+    - python3-pip
     state: latest
 
 - name: install python packages
