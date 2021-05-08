@@ -48,14 +48,14 @@
   apt_repository:
     repo: deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main
     state: present
-    filename: AtomEditor_atom.list
+    filename: AtomEditor_atom
 
-# - name: Install atom
-#   tags: tstat
-#   apt:
-#     pkg:
-#     - atom
-#     state: latest
+- name: Install atom
+  tags: tstat
+  apt:
+    pkg:
+    - atom
+    state: latest
 
 
 
