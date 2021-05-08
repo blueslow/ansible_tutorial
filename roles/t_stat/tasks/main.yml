@@ -1,3 +1,10 @@
+- name: Add repo for atom editor
+  tags: tstat
+  apt_repository:
+    repo: deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main
+    state: present
+    filename: atom.list
+
 - name: install unzip
   tags: tstat
   package:
