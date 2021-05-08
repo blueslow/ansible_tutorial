@@ -55,6 +55,12 @@
       user: klaseh
       key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE3ShmhSX1HEdvhqP5khdZRW8vc2yUl655er/RTaiIsp klaseh@nimbus104"
 
+  - name: add second ssh key for klaseh
+    tags: always
+    authorized_key:
+      user: klaseh
+      key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICFPIb+OIPQFVkKnWV2RiO1Ye+DFCgLI2BJ2No5G2mN7 klaseh@jawa.sehlstedt.se"
+
   - name: add sudoers file for klaseh
     tags: always
     copy:

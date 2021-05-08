@@ -26,7 +26,7 @@ nano ansible.cfg
     private_key_file = ~/.ssh/id_ansible  
 
 
-Runing a few ad-hoc commnads to see if it's working  
+Runing a few ad-hoc commands to see if it's working  
 
     ansible all  -m ping # A ping pong test  
     ansible all --list-host # lists the hosts in the inventory file  
@@ -152,7 +152,7 @@ Then run, e.g. with no password. The ssh ansible keey must be keept safe.
     ansible-playbook site.yml  
 
 # Part 14 - Roles
-Mayor refactoring, The site.yml is splitted into different roles. THis is done by creating a subdirectory named rools in that subdirectory a directory for each role is created and  under each role  a task directory is created. In each task disrectory a main.yml file is created that contains the tasks for that role. Which are copyied from the original site.yml corresponding section. This is repeated for each role. Then the site.yml is changed  to contain a definition for each role, e.g.  
+Major refactoring, The site.yml is splitted into different roles. THis is done by creating a subdirectory named rools in that subdirectory a directory for each role is created and  under each role  a task directory is created. In each task disrectory a main.yml file is created that contains the tasks for that role. Which are copyied from the original site.yml corresponding section. This is repeated for each role. Then the site.yml is changed  to contain a definition for each role, e.g.  
 
     - hosts: workstations
       become: true  
