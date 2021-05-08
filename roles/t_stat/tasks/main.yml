@@ -1,10 +1,3 @@
-- name: Add repo for atom editor
-  tags: tstat
-  apt_repository:
-    repo: deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main
-    state: present
-    filename: atom.list
-
 - name: install unzip
   tags: tstat
   package:
@@ -44,6 +37,28 @@
     - keepassxc
     - atom
     state: latest
+
+- name: Add Key form atom editor
+  tags: tstat
+  apt_key:
+    url: https://packagecloud.io/AtomEditor/atom/gpgkey
+    state: present
+
+- name: Add repo for atom editor
+  tags: tstat
+  apt_repository:
+    repo: deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main
+    state: present
+    filename: AtomEditor_atom.list
+
+- name: Install atom
+  tags: tstat
+  apt:
+    pkg:
+    - atom
+    state: latest
+
+
 
 - name: Checkout blueslow's dotfiles
   tags: tstat
