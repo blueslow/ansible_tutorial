@@ -35,6 +35,7 @@
     - klatexformula
     - regexxer
     - keepassxc
+    - atom
     state: latest
 
 - name: Checkout blueslow's dotfiles
