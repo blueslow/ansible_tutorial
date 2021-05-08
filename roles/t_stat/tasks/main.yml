@@ -35,7 +35,6 @@
     - klatexformula
     - regexxer
     - keepassxc
-    - atom
     state: latest
 
 - name: Add Key form atom editor
