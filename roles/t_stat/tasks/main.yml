@@ -13,10 +13,11 @@
     - fdupes
     - parallel
     - tmux
+#    - pyhton3-pip
     state: latest
 
 - name: install python packages
-  tags: t_stat
+  tags: tstat
   pip:
     - topalias
 
