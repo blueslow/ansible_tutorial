@@ -19,7 +19,8 @@
 - name: install python packages
   tags: tstat
   pip:
-    - topalias
+    name:
+      - topalias
 
 - name: install graphic apps
   tags: tstat
