@@ -16,4 +16,3 @@
     pkg:
     - curl
     - rename
-  state: latest 
