@@ -84,14 +84,14 @@
     group: klaseh
     mode: 0700
 
-# - name: create /media/shared  directory
-#   file:
-#     path: /media/shared
-#     state: directory
-#     owner: klaseh
-#     group: klaseh
-#     mode: 0775
-#
+- name: create /media/shared  directory
+  file:
+    path: /media/shared
+    state: directory
+    owner: klaseh
+    group: klaseh
+    mode: 0775
+
 # - name: change /etc/fstab
 #   lineinfile:
 #     path: /etc/fstab
@@ -106,7 +106,8 @@
     src: //192.168.10.1/klaseh
     fstype: cifs
     opts: credentials=/home/klaseh/.creds/condor_klaseh,iocharset=utf8,uid=klaseh,gid=klaseh
-    state: mounted
+    state: present
+  notify: mount_all
 
 - name: Mount shared share
   mount:
@@ -114,4 +115,5 @@
     src: //192.168.10.1/shared
     fstype: cifs
     opts: credentials=/home/klaseh/.creds/condor_klaseh,iocharset=utf8,uid=klaseh,gid=klaseh
-    state: mounted
+    state: present
+  notify: mount_all
