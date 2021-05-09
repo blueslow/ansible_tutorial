@@ -4,3 +4,9 @@
   args:
     executable: /bin/bash
     chdir: /home/klaseh/dev/dotfiles
+
+- name: mount_all
+  become_user: root
+  shell: mount -a
+  args:
+    executable: /bin/bash

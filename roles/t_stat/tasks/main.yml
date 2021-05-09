@@ -1,10 +1,8 @@
 - name: install unzip
-  tags: tstat
   package:
     name: unzip
 
 - name: install command line apps
-  tags: tstat
   apt:
     pkg:
     - git
@@ -19,7 +17,6 @@
     state: latest
 
 - name: install python packages
-  tags: tstat
   pip:
     name:
       - topalias
@@ -28,7 +25,6 @@
     state: latest
 
 - name: install graphic apps
-  tags: tstat
   apt:
     pkg:
     - meld
@@ -39,29 +35,24 @@
     state: latest
 
 - name: Add Key form atom editor
-  tags: tstat
   apt_key:
     url: https://packagecloud.io/AtomEditor/atom/gpgkey
     state: present
 
 - name: Add repo for atom editor
-  tags: tstat
   apt_repository:
     repo: deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main
     state: present
     filename: AtomEditor_atom
 
 - name: Install atom editor
-  tags: tstat
   apt:
     pkg:
     - atom
     state: latest
 
 
-
 - name: Checkout blueslow's dotfiles
-  tags: tstat
   become_user: klaseh
   ansible.builtin.git:
     repo: https://github.com/blueslow/dotfiles.git
@@ -70,7 +61,6 @@
   notify: source_dotfiles
 
 - name: create klaseh .creds directory
-  tags: klaseh
   file:
     path: /home/klaseh/.creds
     state: directory
@@ -79,10 +69,32 @@
     mode: 0700
 
 - name: copy klaseh cred files
-  tags: klaseh
   copy:
     src: /home/klaseh/.ssh/creds/
     dest: /home/klaseh/.creds/
     owner: klaseh
     group: klaseh
     mode: 0600
+
+- name: create /media/klaseh  directory
+  file:
+    path: /media/klaseh
+    state: directory
+    owner: klaseh
+    group: klaseh
+    mode: 0700
+
+- name: create /media/shared  directory
+  file:
+    path: /media/shared
+    state: directory
+    owner: klaseh
+    group: klaseh
+    mode: 0775
+
+- name: change /etc/fstab
+  lineinfile:
+    path: /etc/fstab
+    regexp: '^//192.168.10.1/klaseh'
+    line: "//192.168.10.1/klaseh	/home/klaseh/klaseh	cifs credentials=/home/klaseh/.creds/condor_klaseh,iocharset=utf8,uid=klaseh,gid=klaseh 0 0"
+  notify: mount_all
