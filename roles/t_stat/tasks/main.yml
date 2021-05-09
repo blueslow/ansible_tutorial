@@ -76,22 +76,7 @@
     group: klaseh
     mode: 0600
 
-# - name: create /media/klaseh  directory
-#   file:
-#     path: /media/klaseh
-#     state: directory
-#     owner: klaseh
-#     group: klaseh
-#     mode: 0700
-#
-# - name: create /media/shared  directory
-#   file:
-#     path: /media/shared
-#     state: directory
-#     owner: klaseh
-#     group: klaseh
-#     mode: 0775
-#
+
 # - name: change /etc/fstab
 #   lineinfile:
 #     path: /etc/fstab
