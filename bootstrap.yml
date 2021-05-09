@@ -48,6 +48,7 @@
     user:
       name: klaseh
       group: klaseh
+    state: present  
 
   - name: add ssh key for klaseh
     tags: always
