@@ -76,25 +76,34 @@
     group: klaseh
     mode: 0600
 
-- name: create /media/klaseh  directory
-  file:
+# - name: create /media/klaseh  directory
+#   file:
+#     path: /media/klaseh
+#     state: directory
+#     owner: klaseh
+#     group: klaseh
+#     mode: 0700
+#
+# - name: create /media/shared  directory
+#   file:
+#     path: /media/shared
+#     state: directory
+#     owner: klaseh
+#     group: klaseh
+#     mode: 0775
+#
+# - name: change /etc/fstab
+#   lineinfile:
+#     path: /etc/fstab
+#     regexp: '^//192.168.10.1/klaseh'
+#     line: "//192.168.10.1/klaseh	/media/klaseh	cifs credentials=/home/klaseh/.creds/condor_klaseh,iocharset=utf8,uid=klaseh,gid=klaseh 0 0"
+#   notify: mount_all
+#
+
+- name: Mount klaseh share
+  mount:
     path: /media/klaseh
-    state: directory
-    owner: klaseh
-    group: klaseh
-    mode: 0700
-
-- name: create /media/shared  directory
-  file:
-    path: /media/shared
-    state: directory
-    owner: klaseh
-    group: klaseh
-    mode: 0775
-
-- name: change /etc/fstab
-  lineinfile:
-    path: /etc/fstab
-    regexp: '^//192.168.10.1/klaseh'
-    line: "//192.168.10.1/klaseh	/home/klaseh/klaseh	cifs credentials=/home/klaseh/.creds/condor_klaseh,iocharset=utf8,uid=klaseh,gid=klaseh 0 0"
-  notify: mount_all
+    src: //192.168.10.1/klaseh
+    fstype: cifs
+    opt: credentials=/home/klaseh/.creds/condor_klaseh,iocharset=utf8,uid=klaseh,gid=klaseh
+    state: present
