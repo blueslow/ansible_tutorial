@@ -1,13 +1,14 @@
 ---
 
+# Example, don't run this 
 - hosts: all
   become: true
   tasks:
 
-  - name: remove apache and php packages
-    package:
-      name:
-        - "{{ apache_package }}"
-        - "{{ php_package }}"
-      state: absent
-      update_cache: yes
+  # - name: remove apache and php packages
+  #   package:
+  #     name:
+  #       - "{{ apache_package }}"
+  #       - "{{ php_package }}"
+  #     state: absent
+  #     update_cache: yes

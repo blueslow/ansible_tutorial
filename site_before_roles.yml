@@ -1,5 +1,6 @@
 ---
-
+# This file is not used any more. When roles was introduced it became obsolete.
+# It remains  as documentation.
 - hosts: all
   become: true
   pre_tasks:

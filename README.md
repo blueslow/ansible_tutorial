@@ -42,7 +42,7 @@ Now try following:
 
     ansible all -m apt -a update_cache=true # Fails needs sudo  
 
-The --become -> ask to sombody else.  
+The --become -> ask to be somebody else.  
 The --ask-become-pass -> ask for password e.g. sudo   
 
     ansible all -m apt -a update_cache=true --become --ask-become-pass # works  

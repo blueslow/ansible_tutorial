@@ -15,6 +15,7 @@
     - tmux
     - python3-pip
     - curl
+    - rename
     state: latest
 
 - name: install python packages
