@@ -106,9 +106,7 @@
     src: //192.168.10.1/klaseh
     fstype: cifs
     opts: credentials=/home/klaseh/.creds/condor_klaseh,iocharset=utf8,uid=klaseh,gid=klaseh
-    state:
-      - present
-      - mounted
+    state: mounted
 
 - name: Mount shared share
   mount:
@@ -116,6 +114,4 @@
     src: //192.168.10.1/shared
     fstype: cifs
     opts: credentials=/home/klaseh/.creds/condor_klaseh,iocharset=utf8,uid=klaseh,gid=klaseh
-    state:
-      - present
-      - mounted
+    state: mounted
