@@ -47,7 +47,7 @@
     tags: always
     user:
       name: klaseh
-      groups: klaseh
+      group: klaseh
 
   - name: add ssh key for klaseh
     tags: always
