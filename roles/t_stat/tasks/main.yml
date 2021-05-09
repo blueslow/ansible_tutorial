@@ -74,8 +74,10 @@
   file:
     path: /home/klaseh/.creds
     state: directory
+    owner: klaseh
+    group: klaseh
     mode: 0700
-    
+
 - name: copy klaseh cred files
   tags: klaseh
   copy:
