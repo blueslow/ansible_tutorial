@@ -14,6 +14,7 @@
     - python3-pip
     - curl
     - rename
+    - cifs-utils
     state: latest
 
 - name: install python packages
