@@ -69,8 +69,15 @@
     clone: true
   notify: source_dotfiles
 
+- name: create klaseh .creds directory
+  tags: klaseh
+  file:
+    path: /home/klaseh/.creds
+    state: directory
+    mode: 0700
+    
 - name: copy klaseh cred files
-  tags: tstat
+  tags: klaseh
   copy:
     src: /home/klaseh/.ssh/creds/
     dest: /home/klaseh/.creds/
