@@ -77,29 +77,21 @@
     group: klaseh
     mode: 0600
 
-# - name: create /media/klaseh  directory
-#   file:
-#     path: /media/klaseh
-#     state: directory
-#     owner: klaseh
-#     group: klaseh
-#     mode: 0700
-#
-# - name: create /media/shared  directory
-#   file:
-#     path: /media/shared
-#     state: directory
-#     owner: klaseh
-#     group: klaseh
-#     mode: 0775
+- name: create symlink to /media/klaseh directory in klaseh home
+  file:
+    src: /media/klaseh
+    dest: /home/klaseh/klaseh
+    owner: klaseh
+    group: klaseh
+    state: link
 
-# - name: change /etc/fstab
-#   lineinfile:
-#     path: /etc/fstab
-#     regexp: '^//192.168.10.1/klaseh'
-#     line: "//192.168.10.1/klaseh	/media/klaseh	cifs credentials=/home/klaseh/.creds/condor_klaseh,iocharset=utf8,uid=klaseh,gid=klaseh 0 0"
-#   notify: mount_all
-#
+- name: create symlink to /media/shared directory in klaseh home
+  file:
+    src: /media/shared
+    dest: /home/klaseh/shared
+    owner: klaseh
+    group: klaseh
+    state: link
 
 - name: Mount klaseh share
   mount:
