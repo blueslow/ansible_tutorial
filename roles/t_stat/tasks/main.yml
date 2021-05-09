@@ -105,5 +105,13 @@
     path: /media/klaseh
     src: //192.168.10.1/klaseh
     fstype: cifs
-    opt: opts=credentials=/home/klaseh/.creds/condor_klaseh,iocharset=utf8,uid=klaseh,gid=klaseh
+    opts: credentials=/home/klaseh/.creds/condor_klaseh,iocharset=utf8,uid=klaseh,gid=klaseh
+    state: present
+
+- name: Mount shared share
+  mount:
+    path: /media/shared
+    src: //192.168.10.1/shared
+    fstype: cifs
+    opts: credentials=/home/klaseh/.creds/condor_klaseh,iocharset=utf8,uid=klaseh,gid=klaseh
     state: present
