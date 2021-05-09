@@ -105,5 +105,5 @@
     path: /media/klaseh
     src: //192.168.10.1/klaseh
     fstype: cifs
-    opt: credentials=/home/klaseh/.creds/condor_klaseh,iocharset=utf8,uid=klaseh,gid=klaseh
+    opt: opts=credentials=/home/klaseh/.creds/condor_klaseh,iocharset=utf8,uid=klaseh,gid=klaseh
     state: present
