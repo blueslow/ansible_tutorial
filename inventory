@@ -3,7 +3,7 @@ nimbus102.sehlstedt.se
 nimbus105.sehlstedt.se
 
 [db_servers]
-# nimbus103.sehlstedt.se
+nimbus103.sehlstedt.se
 
 [file_servers]
 # nimbus106.sehlstedt.se
