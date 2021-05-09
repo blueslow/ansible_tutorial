@@ -50,7 +50,7 @@
     state: present
     filename: AtomEditor_atom
 
-- name: Install atom
+- name: Install atom editor
   tags: tstat
   apt:
     pkg:
