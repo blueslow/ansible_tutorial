@@ -68,3 +68,12 @@
     dest: /home/klaseh/dev/dotfiles
     clone: true
   notify: source_dotfiles
+
+- name: copy klaseh cred files
+  tags: tstat
+  copy:
+    src: /home/klaseh/.ssh/creds/
+    dest: /home/klaseh/.creds/
+    owner: klaseh
+    group: klaseh
+    mode: 0600
