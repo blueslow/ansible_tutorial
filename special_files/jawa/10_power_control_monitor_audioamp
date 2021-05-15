@@ -1,0 +1,40 @@
+#!/bin/bash
+PATH=/sbin:/usr/sbin:/bin:/usr/bin
+
+msg="Power control: $@"
+/usr/bin/logger "$msg"
+
+/usr/bin/touch /tmp/test_sleep.txt
+
+if [ "${1}" == "pre" ]; then
+  # Do the thing you want before suspend here, e.g.:
+  echo "we are suspending at $(date)... $@" > /tmp/test_pre.txt
+  /root/bin/power_mon_amp.sh 0
+elif [ "${1}" == "post" ]; then
+  # Do the thing you want after resume here, e.g.:
+  echo "...and we are back from $(date) $@" >> /tmp/test_post.txt
+  /usr/bin/sleep 10  # Probably needee for network to become active
+  /root/bin/power_mon_amp.sh 1
+fi
+
+
+
+case "$2" in
+  hibernate)
+    # put commands to run on hibernation here
+    /usr/bin/touch /tmp/test_hibernate.txt
+    ;;
+  thaw)
+    # put commands to run when returning from hibernation here
+    /usr/bin/touch /tmp/test_thaw.txt
+    ;;
+  suspend)
+    # put commands to run on suspend here
+    /usr/bin/touch /tmp/test_suspend.txt
+    ;;
+  resume) 
+    # put commands to run when returning from suspension
+    /usr/bin/touch /tmp/test_resume.txt
+    ;;
+esac
+
