@@ -27,8 +27,6 @@
     state: latest
 
 - name: Checkout blueslow's dotfiles
-  become: yes
-  become_user: klaseh
   ansible.builtin.git:
     repo: https://github.com/blueslow/dotfiles.git
     dest: /home/klaseh/dev/dotfiles
