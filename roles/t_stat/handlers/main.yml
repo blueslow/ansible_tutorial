@@ -1,6 +1,6 @@
 - name: source_dotfiles
   become_user: klaseh
-  shell: set -- -f ; source bootstrap.sh && echo "Done" >/dev/null
+  shell: set -- -f ; source bootstrap.sh && echo "Done" > /dev/null
   args:
     executable: /bin/bash
     chdir: /home/klaseh/dev/dotfiles

@@ -1,6 +1,6 @@
 [web_servers]
 nimbus102.sehlstedt.se
-nimbus105.sehlstedt.se
+#nimbus105.sehlstedt.se
 
 [db_servers]
 nimbus103.sehlstedt.se
@@ -20,3 +20,5 @@ nimbus107.sehlstedt.se
 
 [tstat]
 rex.sehlstedt.se
+nimbus104.sehlstedt.se
+

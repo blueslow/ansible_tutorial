@@ -85,6 +85,6 @@
     dest: /home/klaseh/shared
     owner: klaseh
     group: klaseh
- #   state: link
-    force: yes
+    state: link
+#    force: yes
 
