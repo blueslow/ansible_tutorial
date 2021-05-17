@@ -10,13 +10,13 @@ nimbus103.sehlstedt.se
 
 [workstations]
 #jawa.sehlstedt.se
-nimbus104.sehlstedt.se
-rex.sehlstedt.se
+#nimbus104.sehlstedt.se
 
 [desktops]
 #jawa.sehlstedt.se
 #huskvarna.sehlstedt.se
 #benelli.sehlstedt.se
+nimbus107.sehlstedt.se
 
 [tstat]
-nimbus107.sehlstedt.se
+rex.sehlstedt.se

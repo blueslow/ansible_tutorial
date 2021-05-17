@@ -3,7 +3,7 @@ Creating a virtual ubuntu proxmox template
 Install cloud-init
 sudo apt install cloud-init
 
-Edit the /etc/cloud/cloud.cfg or use the on in thus directory.
+Edit the /etc/cloud/cloud.cfg or use the one in this directory.
 
 The cloud.cfg file in this directory have items removed.
 
@@ -33,11 +33,8 @@ Clean apt and power off:
 
     sudo apt clean
     sudo poweroff
- 
+
 In the proxmox interface for machine in question. Select hardware and add a cloud-init disk. Then select Cloud-init and edit the field you must supply a user and password. The regenerate.
 Now the machine can be converted to a template, right click opn the machine.
 
 Clone a new machine from the template and start the machine and test it e.g. check ip adress etc.
-
- 
-
