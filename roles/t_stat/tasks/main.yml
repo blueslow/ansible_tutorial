@@ -1,6 +1,8 @@
 - name: install unzip
   package:
-    name: unzip
+    name:
+      - unzip
+      - cifs-utils
 
 - name: install command line apps
   apt:
@@ -49,22 +51,6 @@
     group: klaseh
     mode: 0600
 
-- name: create symlink to /media/klaseh directory in klaseh home
-  file:
-    src: /media/klaseh
-    dest: /home/klaseh/klaseh
-    owner: klaseh
-    group: klaseh
-    state: link
-
-- name: create symlink to /media/shared directory in klaseh home
-  file:
-    src: /media/shared
-    dest: /home/klaseh/shared
-    owner: klaseh
-    group: klaseh
-    state: link
-
 - name: Mount klaseh share
   mount:
     path: /media/klaseh
@@ -72,7 +58,7 @@
     fstype: cifs
     opts: credentials=/home/klaseh/.creds/condor_klaseh,iocharset=utf8,uid=klaseh,gid=klaseh
     state: mounted
-  notify: mount_all
+#  notify: mount_all
 
 - name: Mount shared share
   mount:
@@ -81,4 +67,24 @@
     fstype: cifs
     opts: credentials=/home/klaseh/.creds/condor_klaseh,iocharset=utf8,uid=klaseh,gid=klaseh
     state: mounted
-  notify: mount_all
+#  notify: mount_all
+
+
+- name: create symlink to /media/klaseh directory in klaseh home
+  file:
+    src: /media/klaseh
+    dest: /home/klaseh/klaseh
+    owner: klaseh
+    group: klaseh
+    state: link
+ #   force: yes
+
+- name: create symlink to /media/shared directory in klaseh home
+  file:
+    src: /media/shared
+    dest: /home/klaseh/shared
+    owner: klaseh
+    group: klaseh
+ #   state: link
+    force: yes
+
