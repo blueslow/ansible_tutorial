@@ -1,0 +1,13 @@
+[Unit]
+Description=Executes power_mon_amp.sh to turn off monitors and amplifier.
+After=network-online.target
+# Before=systemd-poweroff.service 
+
+[Service]
+Type=oneshot
+RemainAfterExit=True
+ExecStop=/root/bin/power_mon_amp.sh 0
+requires=network-online.target
+
+[Install]
+WantedBy=poweroff.target 

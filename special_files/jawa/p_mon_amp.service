@@ -1,0 +1,12 @@
+[Unit]
+Description=Executes power_mon_amp.sh to turn on monitors.
+after=network-online.target
+
+[Service]
+type=oneshot
+RemainAfterExit=false
+ExecStart=/root/bin/power_mon_amp.sh 1
+
+
+[Install]
+RequiredBy=network.target graphical.target getty.target
