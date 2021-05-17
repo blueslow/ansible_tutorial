@@ -1,24 +1,27 @@
 - name: source_dotfiles
-  tasks:
-  - name: change owner and group on directory dev
-    file:
-      owner: klaseh
-      group: klaseh
-      path: /home/klaseh/dev
+  # change owner and group on directory dev
+  file:
+    owner: klaseh
+    group: klaseh
+    path: /home/klaseh/dev
+  notify: source_dotfiles1
 
-  - name: change owner and group on directory dev/dotfiles
-    file:
-      owner: klaseh
-      group: klaseh
-      path: /home/klaseh/dev/dotfiles
-      recurse: yes
+- name: source_dotfiles1
+  # change owner and group on directory dev/dotfiles
+  file:
+    owner: klaseh
+    group: klaseh
+    path: /home/klaseh/dev/dotfiles
+    recurse: yes
+  notify: source_dotfiles2
 
-  - name: Execute the bootstrap
-    become_user: klaseh
-    shell: set -- -f ; source bootstrap.sh && echo "Done" > /dev/null
-    args:
-      executable: /bin/bash
-      chdir: /home/klaseh/dev/dotfiles
+- name: source_dotfiles2
+  #Execute the bootstrap
+  become_user: klaseh
+  shell: set -- -f ; source bootstrap.sh && echo "Done" > /dev/null
+  args:
+    executable: /bin/bash
+    chdir: /home/klaseh/dev/dotfiles
 
 - name: mount_all
   become_user: root
