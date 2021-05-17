@@ -1,4 +1,5 @@
 - name: source_dotfiles
+  become: yes
   become_user: klaseh
   shell: set -- -f ; source bootstrap.sh && echo "Done" > /dev/null
   args:
