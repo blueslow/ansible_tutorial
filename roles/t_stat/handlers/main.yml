@@ -4,6 +4,7 @@
     owner: klaseh
     group: klaseh
     path: /home/klaseh/dev
+    state: directory file
     recurse: yes
   notify: source_dotfiles1
 
