@@ -17,9 +17,14 @@
 
 - name: source_dotfiles2
   #Execute the bootstrap
-  shell: set -- -f ; source /home/klaseh/dev/dotfiles/bootstrap.sh && echo "Done" > /dev/null
-  args:
-    executable: sudo -u klaseh /bin/bash
+  become_user: klaseh
+  command: "/bin/bash /home/klaseh/dev/dotfiles/bootstrap.sh -f"
+
+# - name: source_dotfiles2
+#   #Execute the bootstrap
+#   shell: set -- -f ; source /home/klaseh/dev/dotfiles/bootstrap.sh && echo "Done" > /dev/null
+#   args:
+#     executable: sudo -u klaseh /bin/bash
 
 - name: mount_all
   become_user: root
