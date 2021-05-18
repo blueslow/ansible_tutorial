@@ -27,12 +27,11 @@
     state: latest
 
 - name: Checkout blueslow's dotfiles
-  become_user: klaseh
   git:
     repo: https://github.com/blueslow/dotfiles.git
     dest: /home/klaseh/dev/dotfiles
     clone: true
-  notify: source_dotfiles2
+  notify: source_dotfiles
 
 - name: create klaseh .creds directory
   file:
