@@ -19,6 +19,7 @@
   #Execute the bootstrap
   vars:
     allow_world_readable_tmpfiles: yes
+    pipelining: yes
   become_user: klaseh
   shell: set -- -f ; source bootstrap.sh && echo "Done" > /dev/null
   args:
