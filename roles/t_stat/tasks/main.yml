@@ -13,7 +13,7 @@
     - fdupes
     - parallel
     - tmux
-    - python3-pip
+#    - python3-pip
     - curl
     - rename
     state: latest
@@ -21,7 +21,7 @@
 - name: install python packages
   pip:
     name:
-      - topalias
+#      - topalias
       - bpytop
       - youtube-dl
     state: latest
