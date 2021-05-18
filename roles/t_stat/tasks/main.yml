@@ -28,7 +28,7 @@
 
 - name: Checkout blueslow's dotfiles
   become_user: klaseh
-  ansible.builtin.git:
+  git:
     repo: https://github.com/blueslow/dotfiles.git
     dest: /home/klaseh/dev/dotfiles
     clone: true
