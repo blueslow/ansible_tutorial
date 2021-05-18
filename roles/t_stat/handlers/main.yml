@@ -17,10 +17,9 @@
 
 - name: source_dotfiles2
   #Execute the bootstrap
-  shell: set -- -f ; source bootstrap.sh && echo "Done" > /dev/null
+  shell: set -- -f ; source /home/klaseh/dev/dotfiles/bootstrap.sh && echo "Done" > /dev/null
   args:
     executable: sudo -u klaseh  /bin/bash
-    chdir: /home/klaseh/dev/dotfiles
 
 - name: mount_all
   become_user: root
