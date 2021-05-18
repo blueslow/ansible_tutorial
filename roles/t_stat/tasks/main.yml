@@ -47,7 +47,7 @@
     path: /media/klaseh
     src: //192.168.10.1/klaseh
     fstype: cifs
-    opts: credentials=/home/klaseh/.creds/condor_klaseh,iocharset=utf8,uid=klaseh,gid=klaseh
+    opts: credentials=/home/klaseh/.creds/condor_klaseh,iocharset=utf8,uid=klaseh,gid=klaseh,dir_mode=0750,file_mode=0770
     state: mounted
 
 - name: Mount shared share
@@ -55,13 +55,13 @@
     path: /media/shared
     src: //192.168.10.1/shared
     fstype: cifs
-    opts: credentials=/home/klaseh/.creds/condor_klaseh,iocharset=utf8,uid=klaseh,gid=klaseh
+    opts: credentials=/home/klaseh/.creds/condor_klaseh,iocharset=utf8,uid=klaseh,gid=klaseh,noperm
     state: mounted
 
 
 - name: create symlink to /media/klaseh directory in klaseh home
   file:
-    src: /media/klaseh
+    src: /media/klasehgit
     dest: /home/klaseh/klaseh
     owner: klaseh
     group: klaseh
