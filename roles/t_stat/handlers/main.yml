@@ -19,7 +19,7 @@
   #Execute the bootstrap
   shell: set -- -f ; source /home/klaseh/dev/dotfiles/bootstrap.sh && echo "Done" > /dev/null
   args:
-    executable: sudo -u klaseh  /bin/bash
+    executable: sudo -u klaseh /bin/bash
 
 - name: mount_all
   become_user: root

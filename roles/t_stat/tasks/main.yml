@@ -56,7 +56,6 @@
     fstype: cifs
     opts: credentials=/home/klaseh/.creds/condor_klaseh,iocharset=utf8,uid=klaseh,gid=klaseh
     state: mounted
-#  notify: mount_all
 
 - name: Mount shared share
   mount:
@@ -65,7 +64,6 @@
     fstype: cifs
     opts: credentials=/home/klaseh/.creds/condor_klaseh,iocharset=utf8,uid=klaseh,gid=klaseh
     state: mounted
-#  notify: mount_all
 
 
 - name: create symlink to /media/klaseh directory in klaseh home
@@ -75,7 +73,6 @@
     owner: klaseh
     group: klaseh
     state: link
- #   force: yes
 
 - name: create symlink to /media/shared directory in klaseh home
   file:
@@ -84,4 +81,3 @@
     owner: klaseh
     group: klaseh
     state: link
-#    force: yes
