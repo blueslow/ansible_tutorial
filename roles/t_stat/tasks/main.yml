@@ -61,7 +61,7 @@
 
 - name: create symlink to /media/klaseh directory in klaseh home
   file:
-    src: /media/klasehgit
+    src: /media/klaseh
     dest: /home/klaseh/klaseh
     owner: klaseh
     group: klaseh
