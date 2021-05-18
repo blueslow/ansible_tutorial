@@ -17,9 +17,10 @@
 
 - name: source_dotfiles2
   #Execute the bootstrap
-  vars:
-    allow_world_readable_tmpfiles: yes
-    pipelining: yes
+  # vars:
+  #   allow_world_readable_tmpfiles: yes
+  #   pipelining: yes
+  become: yes
   become_user: klaseh
   command: "/bin/bash /home/klaseh/dev/dotfiles/bootstrap.sh -f"
 
