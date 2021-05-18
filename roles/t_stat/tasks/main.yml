@@ -34,46 +34,46 @@
     group: klaseh
     mode: 0700
 
-- name: copy klaseh cred files
-  copy:
-    src: /home/klaseh/.ssh/creds/
-    dest: /home/klaseh/.creds/
-    owner: klaseh
-    group: klaseh
-    mode: 0600
-
-- name: Mount klaseh share
-  mount:
-    path: /media/klaseh
-    src: //192.168.10.1/klaseh
-    fstype: cifs
-    opts: credentials=/home/klaseh/.creds/condor_klaseh,iocharset=utf8,uid=klaseh,gid=klaseh
-    state: mounted
-
-- name: Mount shared share
-  mount:
-    path: /media/shared
-    src: //192.168.10.1/shared
-    fstype: cifs
-    opts: credentials=/home/klaseh/.creds/condor_klaseh,iocharset=utf8,uid=klaseh,gid=klaseh
-    state: mounted
-
-
-- name: create symlink to /media/klaseh directory in klaseh home
-  file:
-    src: /media/klaseh
-    dest: /home/klaseh/klaseh
-    owner: klaseh
-    group: klaseh
-    state: link
-
-- name: create symlink to /media/shared directory in klaseh home
-  file:
-    src: /media/shared
-    dest: /home/klaseh/shared
-    owner: klaseh
-    group: klaseh
-    state: link
+# - name: copy klaseh cred files
+#   copy:
+#     src: /home/klaseh/.ssh/creds/
+#     dest: /home/klaseh/.creds/
+#     owner: klaseh
+#     group: klaseh
+#     mode: 0600
+#
+# - name: Mount klaseh share
+#   mount:
+#     path: /media/klaseh
+#     src: //192.168.10.1/klaseh
+#     fstype: cifs
+#     opts: credentials=/home/klaseh/.creds/condor_klaseh,iocharset=utf8,uid=klaseh,gid=klaseh
+#     state: mounted
+#
+# - name: Mount shared share
+#   mount:
+#     path: /media/shared
+#     src: //192.168.10.1/shared
+#     fstype: cifs
+#     opts: credentials=/home/klaseh/.creds/condor_klaseh,iocharset=utf8,uid=klaseh,gid=klaseh
+#     state: mounted
+#
+#
+# - name: create symlink to /media/klaseh directory in klaseh home
+#   file:
+#     src: /media/klaseh
+#     dest: /home/klaseh/klaseh
+#     owner: klaseh
+#     group: klaseh
+#     state: link
+#
+# - name: create symlink to /media/shared directory in klaseh home
+#   file:
+#     src: /media/shared
+#     dest: /home/klaseh/shared
+#     owner: klaseh
+#     group: klaseh
+#     state: link
 
 - name: Checkout blueslow's dotfiles
   git:
