@@ -2,12 +2,10 @@
 MOSPUB="/usr/bin/mosquitto_pub"
 BROKER="raspberrypi3w.sehlstedt.se"
 BPORT="1883"
-TOPIC="home-assistant/office/sw1"
+TOPIC="home-assistant/office/sw2"
 
 #Get the BUSER and BPWD
 source mosquitto.pwd
-
-
 
 if [ "$#" = "1" ]; then
     $MOSPUB -h $BROKER -p $BPORT -u $BUSER -P $BPWD -t $TOPIC -m $1
