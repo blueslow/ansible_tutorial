@@ -17,13 +17,9 @@
 
 - name: source_dotfiles2
   #Execute the bootstrap
-  vars:
-    allow_world_readable_tmpfiles: yes
-    pipelining: yes
-  become_user: klaseh
   shell: set -- -f ; source bootstrap.sh && echo "Done" > /dev/null
   args:
-    executable: /bin/bash
+    executable: sudo -u klaseh  /bin/bash
     chdir: /home/klaseh/dev/dotfiles
 
 - name: mount_all
