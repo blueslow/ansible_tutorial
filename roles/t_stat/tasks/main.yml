@@ -26,13 +26,6 @@
       - youtube-dl
     state: latest
 
-- name: Checkout blueslow's dotfiles
-  git:
-    repo: https://github.com/blueslow/dotfiles.git
-    dest: /home/klaseh/dev/dotfiles
-    clone: true
-  notify: source_dotfiles
-
 - name: create klaseh .creds directory
   file:
     path: /home/klaseh/.creds
@@ -81,3 +74,10 @@
     owner: klaseh
     group: klaseh
     state: link
+
+- name: Checkout blueslow's dotfiles
+  git:
+    repo: https://github.com/blueslow/dotfiles.git
+    dest: /home/klaseh/dev/dotfiles
+    clone: true
+  notify: source_dotfiles
