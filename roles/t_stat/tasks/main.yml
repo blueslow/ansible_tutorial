@@ -27,11 +27,12 @@
     state: latest
 
 - name: Checkout blueslow's dotfiles
+  become_user: klaseh
   ansible.builtin.git:
     repo: https://github.com/blueslow/dotfiles.git
     dest: /home/klaseh/dev/dotfiles
     clone: true
-  notify: source_dotfiles
+  notify: source_dotfiles2
 
 - name: create klaseh .creds directory
   file:
