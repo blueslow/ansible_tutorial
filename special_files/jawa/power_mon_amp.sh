@@ -5,7 +5,10 @@ BPORT="1883"
 TOPIC="home-assistant/office/sw1"
 
 #Get the BUSER and BPWD
-source mosquitto.pwd
+source /root/bin/mosquitto.pwd
+
+echo $BUSER
+echo $BPWD
 
 /usr/bin/touch /tmp/pma.txt
 echo "pmon $@ : $TOPIC" >>/tmp/pma.txt

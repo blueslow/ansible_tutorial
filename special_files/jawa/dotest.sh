@@ -5,7 +5,7 @@ BPORT="1883"
 TOPIC="home-assistant/office/sw2"
 
 #Get the BUSER and BPWD
-source mosquitto.pwd
+source /root/bin/mosquitto.pwd
 
 if [ "$#" = "1" ]; then
     $MOSPUB -h $BROKER -p $BPORT -u $BUSER -P $BPWD -t $TOPIC -m $1
