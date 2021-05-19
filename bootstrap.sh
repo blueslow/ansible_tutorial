@@ -5,7 +5,9 @@ echo "Prerequsites: be able to succsefully ssh in as klaseh"
 echo "and be able to sudo to root with password"
 
 if [ "$#" = "0" ]; then
-    echo " No params"
+    # Run for all nodes in inventory
+    ansible-playbook -u ${USER} -K bootstrap.yml
 else
-    echo "All params: $@"
+    # Run for specific node in inventory
+    ansible-playbook - ${USER} -K -l "$@" bootstrap.yml
 fi
