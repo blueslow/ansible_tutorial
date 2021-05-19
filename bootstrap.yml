@@ -21,11 +21,11 @@
 # The below action has a dependency to  community.general.
 # It can be installed with:
 # ansible-galaxy collection install community.general
-
   - name: Ensure sv_SE.UTF-8 locale exist
     community.general.locale_gen:
       name: sv_SE.UTF-8
       state: present
+    when: ansible_distribution == "Ubuntu"
 
 - hosts: all
   become: true
