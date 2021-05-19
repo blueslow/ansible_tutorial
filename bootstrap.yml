@@ -18,6 +18,15 @@
       update_cache: yes
     when: ansible_distribution == "Ubuntu"
 
+# The below action has a dependency to  community.general.
+# It can be installed with:
+# ansible-galaxy collection install community.general
+
+  - name: Ensure sv_SE.UTF-8 locale exist
+    community.general.locale.gen:
+      name: sv_SE.UTF-8
+      state: present
+
 - hosts: all
   become: true
   tasks:
