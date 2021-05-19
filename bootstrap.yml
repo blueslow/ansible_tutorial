@@ -23,7 +23,7 @@
 # ansible-galaxy collection install community.general
 
   - name: Ensure sv_SE.UTF-8 locale exist
-    community.general.locale.gen:
+    community.general.locale_gen:
       name: sv_SE.UTF-8
       state: present
 
