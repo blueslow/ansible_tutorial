@@ -9,5 +9,6 @@ if [ "$#" = "0" ]; then
     ansible-playbook -u ${USER} -K bootstrap.yml
 else
     # Run for specific node in inventory
-    ansible-playbook - ${USER} -K -l "$@" bootstrap.yml
+    echo "ansible-playbook - ${USER} -K -l $1 bootstrap.yml"
+    ansible-playbook -u ${USER} -K -l "$1" bootstrap.yml
 fi
