@@ -43,7 +43,7 @@
   roles:
     - file_servers
 
-- hosts: tstat
+- hosts: terminals
   become: true
   roles:
-    - t_stat
+    - terminals
