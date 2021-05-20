@@ -20,15 +20,6 @@
     - ffmpeg
     state: latest
 
-- name: install command line apps
-  apt:
-    pkg:
-    - docker.io
-    purge: yes
-    state: absent
-
-
-
 - name: Add klaseh to group docker
   user:
     name: klaseh
