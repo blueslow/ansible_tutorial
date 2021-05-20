@@ -47,3 +47,8 @@
   become: true
   roles:
     - terminals
+
+- hosts: dockers
+  become: true
+  roles:
+    - docker
