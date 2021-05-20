@@ -1,24 +1,24 @@
 [web_servers]
 nimbus102.sehlstedt.se
-#nimbus105.sehlstedt.se
+nimbus105.sehlstedt.se
 
 [db_servers]
 nimbus103.sehlstedt.se
 
 [file_servers]
-# nimbus106.sehlstedt.se
+nimbus106.sehlstedt.se
 
 [workstations]
 #jawa.sehlstedt.se
-#nimbus104.sehlstedt.se
+nimbus100.sehlstedt.se
+nimbus107.sehlstedt.se
 
 [desktops]
 #jawa.sehlstedt.se
 #huskvarna.sehlstedt.se
 #benelli.sehlstedt.se
-nimbus107.sehlstedt.se
 
-[tstat]
+[terminals]
 rex.sehlstedt.se
 nimbus104.sehlstedt.se
-
+jawa.sehlstedt.se
