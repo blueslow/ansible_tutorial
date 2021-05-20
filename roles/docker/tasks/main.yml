@@ -17,10 +17,10 @@
     state: present
 
 # apt-key fingerprint
-# - name: Verify that we have the key with the fingerprint
-#   apt_key:
-#     id: 0EBFCD88
-#     state: present
+- name: Verify that we have the key with the fingerprint
+  apt_key:
+    id: 0EBFCD88
+    state: present
 
 # add-apt-repository
 - name: Set up the stable repository
