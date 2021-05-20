@@ -1,7 +1,3 @@
-- name: install unzip
-  package:
-    name: unzip
-
 - name: install graphic apps
   apt:
     pkg:
@@ -11,20 +7,24 @@
     - regexxer
     - keepassxc
     state: latest
+  when: ansible_distribution == "Ubuntu"
 
 - name: Add Key form atom editor
   apt_key:
     url: https://packagecloud.io/AtomEditor/atom/gpgkey
     state: present
+  when: ansible_distribution == "Ubuntu"
 
 - name: Add repo for atom editor
   apt_repository:
     repo: deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main
     state: present
     filename: AtomEditor_atom
+  when: ansible_distribution == "Ubuntu"
 
 - name: Install atom editor
   apt:
     pkg:
     - atom
     state: latest
+  when: ansible_distribution == "Ubuntu"

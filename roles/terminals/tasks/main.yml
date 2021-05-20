@@ -23,8 +23,12 @@
     name:
 #      - topalias
       - bpytop
-      - youtube-dl
     state: latest
+
+- name: install youtube-dl latest from yt-dl.org
+  shell: 'curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl'
+  notify: youtubedl_set_exec
+
 
 - name: create klaseh .creds directory
   file:
