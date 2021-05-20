@@ -17,6 +17,8 @@
     - python-is-python3
     - curl
     - rename
+    - ffmpeg
+    - docker.io
     state: latest
 
 - name: install python packages
