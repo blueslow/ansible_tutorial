@@ -18,8 +18,23 @@
     - curl
     - rename
     - ffmpeg
-    - docker.io
     state: latest
+
+- name: install command line apps
+  apt:
+    pkg:
+    - docker.io
+    purge: yes
+    state: absent
+
+
+
+- name: Add klaseh to group docker
+  user:
+    name: klaseh
+    groups: docker
+    append: yes
+
 
 - name: install python packages
   pip:

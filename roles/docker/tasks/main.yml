@@ -1,0 +1,68 @@
+
+
+# install packages to allow apt to use a repository over HTTPS:
+- name: Install docker packages
+  apt:
+    pkg:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - software-properties-common
+    state: present
+
+# curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+- name: Add Docker s official GPG key
+  apt_key:
+    url: https://download.docker.com/linux/ubunut/gpg
+    state: present
+
+# apt-key fingerprint
+# - name: Verify that we have the key with the fingerprint
+#   apt_key:
+#     id: 0EBFCD88
+#     state: present
+
+# add-apt-repository
+- name: Set up the stable repository
+  apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable
+    state: present
+    update_cache: yes
+
+# apt-get update
+- name: Update apt packages
+  apt:
+    update_cache: yes
+
+# install docker-ce latetst verion
+- name: Install docker
+  apt:
+    name: docker-ce
+    state: present
+    update_cache: yes
+
+# optional you may to add your user to docker group
+
+# sudo groupadd docker
+- name: Create "docker" group
+  group:
+    name: "{{ docker_group }}"
+    state: present
+
+# sudo usermod -aG docker root
+- name: Add "docker_user"  to "docker" group
+  user:
+   name: "{{ docker_user }}"
+   group: "{{ docker_group }}"
+   append: yes
+
+# install docker-compose 1.24.0 version, but you can specify the version you need & apply executable permissions to the binary
+- name: install docker-compose
+  get_url:
+    url: https://github.com/docker/compose/releases/download/1.29.2/docker-compose-{{ ansible_system }}-{{ ansible_userspace_architecture }}
+    dest: /usr/local/bin/docker-compose
+    mode: 'u+x,g+x'
+
+# you can also create a symbolic link to /usr/bin or any other directory in your path
+- name: Create symlink
+  file: src=/usr/local/bin/docker-compose dest=/usr/bin/docker-compose state=link
