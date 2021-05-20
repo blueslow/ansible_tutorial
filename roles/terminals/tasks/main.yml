@@ -43,9 +43,12 @@
       - bpytop
     state: latest
 
-- name: install youtube-dl latest from yt-dl.org
-  shell: 'curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl'
-  notify: youtubedl_set_exec
+
+- name: install youtube-dl latest from yt-dl.org and set exec
+  get_url:
+    url: https://yt-dl.org/downloads/latest/youtube-dl
+    dest: /usr/local/bin/youtube-dl
+    mode: 0755
 
 
 - name: create klaseh .creds directory

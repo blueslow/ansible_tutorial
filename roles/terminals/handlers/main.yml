@@ -31,10 +31,3 @@
   shell: mount -a
   args:
     executable: /bin/bash
-
-- name: youtubedl_set_exec
-  file:
-    path: /usr/local/bin/youtube-dl
-    owner: root
-    group: root
-    mode: 0755
