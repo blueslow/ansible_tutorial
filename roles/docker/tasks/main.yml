@@ -66,3 +66,18 @@
 # you can also create a symbolic link to /usr/bin or any other directory in your path
 - name: Create symlink
   file: src=/usr/local/bin/docker-compose dest=/usr/bin/docker-compose state=link
+
+# create a portainer
+- name: Create portainer container
+  docker_container:
+    name: portainer
+    image: portainer/portainer-ce
+    state: started
+    recreate: yes
+    restart_policy: always
+    published_ports:
+      - "8000:8000"
+      - "9000:9000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
