@@ -20,13 +20,6 @@
     - ffmpeg
     state: latest
 
-- name: Add klaseh to group docker
-  user:
-    name: klaseh
-    groups: docker
-    append: yes
-
-
 - name: install python packages
   pip:
     name:
@@ -44,7 +37,7 @@
 
 - name: create klaseh .creds directory
   file:
-    path: /home/klaseh/.creds
+    path: /home/klaseh/.ssh/creds
     state: directory
     owner: klaseh
     group: klaseh
@@ -53,7 +46,7 @@
 - name: copy klaseh cred files
   copy:
     src: /home/klaseh/.ssh/creds/
-    dest: /home/klaseh/.creds/
+    dest: /home/klaseh/.ssh/creds/
     owner: klaseh
     group: klaseh
     mode: 0600
@@ -63,7 +56,7 @@
     path: /media/klaseh
     src: //192.168.10.1/klaseh
     fstype: cifs
-    opts: credentials=/home/klaseh/.creds/condor_klaseh,iocharset=utf8,uid=klaseh,gid=klaseh,dir_mode=0750,file_mode=0770
+    opts: credentials=/home/klaseh/.ssh/creds/condor_klaseh,iocharset=utf8,uid=klaseh,gid=klaseh,dir_mode=0750,file_mode=0770
     state: mounted
 
 - name: Mount shared share
@@ -71,7 +64,7 @@
     path: /media/shared
     src: //192.168.10.1/shared
     fstype: cifs
-    opts: credentials=/home/klaseh/.creds/condor_klaseh,iocharset=utf8,uid=klaseh,gid=klaseh,noperm
+    opts: credentials=/home/klaseh/.ssh/creds/condor_klaseh,iocharset=utf8,uid=klaseh,gid=klaseh,noperm
     state: mounted
 
 
