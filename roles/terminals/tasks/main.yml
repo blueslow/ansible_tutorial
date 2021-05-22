@@ -35,7 +35,12 @@
     mode: 0755
 
 
-- name: create klaseh .creds directory
+- name: remove folder .creds in klaseh home
+  file :
+    state: absent
+    path: /home/klaseh/.creds/
+
+- name: create klaseh creds directory under .ssh
   file:
     path: /home/klaseh/.ssh/creds
     state: directory
