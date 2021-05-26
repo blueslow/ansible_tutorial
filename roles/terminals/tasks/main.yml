@@ -72,6 +72,14 @@
     opts: credentials=/home/klaseh/.ssh/creds/condor_klaseh,iocharset=utf8,uid=klaseh,gid=klaseh,noperm
     state: mounted
 
+- name: Mount shared share
+  mount:
+    path: /media/new-eyefi
+    src: //192.168.10.1/new-eyefi
+    fstype: cifs
+    opts: credentials=/home/klaseh/.ssh/creds/condor_klaseh,iocharset=utf8,uid=klaseh,gid=klaseh,noperm
+    state: mounted
+
 
 - name: create symlink to /media/klaseh directory in klaseh home
   file:
