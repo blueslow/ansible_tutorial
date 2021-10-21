@@ -1,0 +1,10 @@
+---
+- name: Print linux distribution and version
+  hosts: all
+
+  tasks:
+    - name: capture output of id command
+      command: cat /etc/os-release
+      register: login
+    - debug: msg="{{ login.stdout }}"
+
