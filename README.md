@@ -1,6 +1,6 @@
 # Ansible tutorial
 
-Tutorial for ansible, following Jay LaCroix  
+Tutorial for ansible, following Jay LaCroix on LearLinuxTV
 
 # Introduction  
 Install openssh-server on servers.  
