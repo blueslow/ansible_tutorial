@@ -8,3 +8,8 @@
       register: login
     - debug: msg="{{ login.stdout }}"
 
+    - name: capture output of /etc/motd
+      command: dpkg -l ubuntu-desktop
+      register: login
+      when: ansible_distribution == "Ubuntu"
+    - debug: msg="{{ login.stdout }}"

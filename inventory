@@ -1,30 +1,23 @@
 [web_servers]
-nimbus102.sehlstedt.se
-nimbus105.sehlstedt.se
+nimbus102.sehlstedt.se # VM ubuntu server
+nimbus105.sehlstedt.se # Container centos-8
 
 [db_servers]
-nimbus103.sehlstedt.se
+nimbus103.sehlstedt.se # Container ubuntu server 
 
 [file_servers]
-nimbus106.sehlstedt.se
+nimbus106.sehlstedt.se # VM  ubuntu server
 
 [workstations]
-#jawa.sehlstedt.se
-nimbus100.sehlstedt.se
-nimbus107.sehlstedt.se
+nimbus100.sehlstedt.se # VM Ubuntu desktop
+nimbus107.sehlstedt.se # VM Ubuntu desktop
 
 [desktops]
-#jawa.sehlstedt.se
-#huskvarna.sehlstedt.se
-#benelli.sehlstedt.se
 
 [terminals]
-rex.sehlstedt.se
-nimbus104.sehlstedt.se
-jawa.sehlstedt.se
+nimbus104.sehlstedt.se # Container the ansible playbook server
 nimbus100.sehlstedt.se
 nimbus107.sehlstedt.se
 
 [dockers]
-rex.sehlstedt.se
 nimbus100.sehlstedt.se
