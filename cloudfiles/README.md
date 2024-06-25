@@ -38,3 +38,4 @@ In the proxmox interface for machine in question. Select hardware and add a clou
 Now the machine can be converted to a template, right click opn the machine.
 
 Clone a new machine from the template and start the machine and test it e.g. check ip adress etc.
+Just a text change
